@@ -26,9 +26,9 @@
 
 **Não esqueça de baixar as dependências do projeto, caso necessário**
 
-Newtonsoft.Json
-OxyPlot.Xamarin.Forms
-SQLite
-sqlite-net-pcl
-ZXing.Net.Mobile
-ZXing.Net.Mobile.Forms
+* Newtonsoft.Json
+* OxyPlot.Xamarin.Forms
+* SQLite
+* sqlite-net-pcl
+* ZXing.Net.Mobile
+* ZXing.Net.Mobile.Forms
