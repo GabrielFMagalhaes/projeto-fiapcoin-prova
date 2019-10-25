@@ -25,6 +25,7 @@
 8. Pagina final com os detalhes da moeda (MoedaDetalhePage e MoedaDetalheViewMoedel). Realiza requisição na API e retorna os dados da moeda. Além disso, códigos de QRCode e Gráficos serão mocados para todas as moedas (Necessário adicionar códigos na classe MainActivity.cs).
 
 **Não esqueça de baixar as dependências do projeto, caso necessário**
+
 Newtonsoft.Json
 OxyPlot.Xamarin.Forms
 SQLite
