@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ProjetoFiapCoinProva.ViewModel"
+             xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+             xmlns:zx="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing.portable"
+             mc:Ignorable="d"
+             x:Class="ProjetoFiapCoinProva.Views.MoedaDetalhe">
+
+    <ContentPage.BindingContext>
+        <vm:MoedaDetalheViewModel></vm:MoedaDetalheViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="30">
+
+            <Label Text="{Binding Moeda.NomeMoeda}"></Label>
+            <Label Text="{Binding Moeda.CotacaoRealMoeda}"></Label>
+            <Label Text="{Binding Moeda.CotacaoDolarMoeda}"></Label>
+            <oxy:PlotView 
+                Model="{Binding Grafico}" 
+                WidthRequest="250" 
+                HeightRequest="250"/>
+            <zx:ZXingBarcodeImageView 
+                    BarcodeFormat="QR_CODE"
+                    BarcodeValue="{Binding Moeda.NomeMoeda}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    HeightRequest="300"
+                    WidthRequest="300"
+                    x:Name="QRCodeImage">
+                <zx:ZXingBarcodeImageView.BarcodeOptions>
+                    <zxcm:EncodingOptions Width="300" Height="300" />
+                </zx:ZXingBarcodeImageView.BarcodeOptions>
+            </zx:ZXingBarcodeImageView>
+            <Button x:Name="BotaoVoltar" Text="Voltar" Clicked="VoltarClicked"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
